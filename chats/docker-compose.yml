@@ -1,0 +1,7 @@
+---
+mattermost:
+    image: mattermost/mattermost-preview
+    ports:
+        - "8065:8065"
+    volumes:
+        - ./runtime/mattermost/mysql:/var/lib/mysql

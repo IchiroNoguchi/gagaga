@@ -1,0 +1,14 @@
+---
+proxy:
+    image: nginx
+    ports:
+        - "80:80"
+    command: nginx -g "daemon off;"
+    volumes:
+        - ./runtime/nginx.conf:/etc/nginx/nginx.conf
+        - ./runtime/conf.d:/etc/nginx/conf.d
+    extra_hosts:
+     - "container.local:192.168.56.99"
+     - "wiki.local:192.168.56.99"
+     - "chat.local:192.168.56.99"
+     - "www.local:192.168.56.99"
